@@ -3,10 +3,7 @@ FROM centos:centos7
 MAINTAINER lulichn
 
 # add td-agent repository and gpg key
-RUN curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent2.sh | sh
-
-# install td-agent
-RUN yum -y install td-agent && yum clean all
+RUN curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent2.sh | sh sudo
 
 # install fluent biquery plugin
 RUN /usr/sbin/td-agent-gem install fluent-plugin-bigquery  --no-ri --no-rdoc -V
