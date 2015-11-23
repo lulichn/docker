@@ -1,6 +1,6 @@
 FROM centos:centos7
 
-MAINTAINER Mikael Keto
+MAINTAINER lulichn
 
 # add td-agent repository and gpg key
 ADD td-agent.repo /etc/yum.repos.d/td-agent.repo
