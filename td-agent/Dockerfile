@@ -3,8 +3,7 @@ FROM centos:centos7
 MAINTAINER lulichn
 
 # add td-agent repository and gpg key
-ADD td-agent.repo /etc/yum.repos.d/td-agent.repo
-ADD RPM-GPG-KEY-td-agent /etc/pki/rpm-gpg/RPM-GPG-KEY-td-agent
+RUN curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent2.sh | sh
 
 # install td-agent
 RUN yum -y install td-agent && yum clean all
