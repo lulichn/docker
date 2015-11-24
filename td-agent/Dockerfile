@@ -40,11 +40,10 @@ RUN gem install fluentd -v 0.12.15
 
 # install fluent plugins
 RUN gem install fluent-plugin-bigquery
-RUN gem install fluent-plugin-google-cloud
 RUN gem install fluent-plugin-s3
 
 COPY fluent.conf /fluentd/etc/
-ONBUILD COPY https://raw.githubusercontent.com/lulichn/docker/master/td-agent/fluent.conf /fluentd/etc/
+ONBUILD COPY fluent.conf /fluentd/etc/
 ONBUILD COPY plugins/* /fluentd/plugins/
 
 WORKDIR /home/ubuntu
